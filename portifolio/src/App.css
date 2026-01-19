@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+#root {
+  max-width: 1280px;
+  text-align: center;
+}
+
+.hero{
+  width: 100vw;
+  margin: auto auto;
+  height: 100vh;
+  background-color: #15151b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+h1#h1-first{
+  color: #888;
+  display: flex;
+  font-size: 7rem;
+  transform-origin: center center;
+}
+#pp {
+  color: #61dafbaa;
+  font-size: 1.2rem;
+  text-align: left;
+  padding-left: 20px; 
+  display: block;
+  width: fit-content;
+  box-sizing: border-box;
+  line-height: 1; 
+}
+.next-section {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 5; /* Fica "atrás" do hero */
+}
+
+.word {
+  display: inline-block !important; 
+  vertical-align: middle !important;
+  white-space: normal !important; 
+  position: relative !important;
+  margin: 0;
+  padding: 0;
+}
+#first{
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* App.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a; /* Cor de fundo geral */
+  overflow-x: hidden; /* Prevenção extra contra scroll lateral */
+}
+
+/* Container da seção de Zoom */
+.zoom-hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #15151b; /* Mesma cor do seu hero anterior */
+  /* CRUCIAL: Impede que o texto gigante vaze para fora */
+  overflow: hidden;
+  position: relative;
+  z-index: 10; /* Garante que fique acima da próxima seção inicialmente */
+}
+
+/* O texto que vai crescer */
+.zoom-text {
+  font-size: 10vw; /* Tamanho inicial grande e responsivo */
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  /* O "will-change" avisa o navegador que este elemento vai mudar muito,
+     ajudando na performance da renderização */
+  will-change: transform;
+  /* Centraliza o ponto de origem do zoom no meio do texto */
+  transform-origin: center center;
+}
+
+/* A próxima seção */
+.next-section {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 5; /* Fica "atrás" do hero */
+}
+
+.next-section h2 {
+  font-size: 3rem;
+  color: #61dafbaa;
+}
