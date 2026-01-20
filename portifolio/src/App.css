@@ -47,6 +47,12 @@ h1#h1-first{
   font-weight: 900;
   transform-origin: center center;
 }
+#name{
+  color: #517ba3;
+  font-family: 'Trebuchet MS';
+  text-align: left;
+  margin-bottom: 20px;
+}
 #pp {
   color: #61dafbaa;
   font-size: 1.2rem;
@@ -94,6 +100,7 @@ html, body {
 
 /* Container da seção de Zoom */
 .zoom-hero {
+  max-width: 1800px;
   width: 89vw;
   height: 100vh;
   margin: 0 auto;
@@ -141,9 +148,82 @@ ul{
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  position: relative;
-  top: 1px;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+
 }
+
+#js{
+  background: url('imagens/js.png');
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 55px;
+  right: -40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#css{
+  background: url('imagens/css-3.png');
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 55px;
+  right: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#html{
+  background: url('imagens/html.png');
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 35px;
+  right: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#node{
+  background: url('imagens/node-js.png');
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 35px;
+  left: 215px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#mongodb{
+  background: url('imagens/mongodb-svgrepo-com.svg');
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 45px;
+  left: 190px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#express{
+  background: url('imagens/react.svg');
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 45px;
+  left: 145px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.parallax-layer {
+  position: absolute;
+  will-change: transform; /* Otimiza a performance para animação */
+  transition: transform 0.1s ease-out; /* Suaviza o movimento do mouse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* A próxima seção */
 .next-section {

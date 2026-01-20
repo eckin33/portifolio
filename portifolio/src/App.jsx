@@ -51,7 +51,7 @@ function App() {
     });
 
     gsap.to("#h1-first", {
-      delay:3.6,
+      delay: 3.6,
       y: -25,
       fontSize: "4rem",
       textAlign: "left",
@@ -65,20 +65,63 @@ function App() {
       marginRight: "auto",
       ease: "power1.inOut"
     })
-    gsap.fromTo("#navbar",{
+    gsap.fromTo("#navbar", {
       opacity: 0,
       y: -100
     }, {
-      delay:4,
+      delay: 4,
       opacity: 1,
       y: 0,
       display: "flex"
     })
     gsap.to("#pp", {
       delay: 3.6,
-      y:-18,
+      y: -18,
       x: -4
     })
+    gsap.fromTo(".icons-eu", {
+
+      display: "none",
+      opacity: 0,
+    }, {
+      delay: 5,
+      opacity: 1,
+      display: "block"
+    })
+    gsap.to('#js', {
+      y: 10
+    })
+
+    gsap.fromTo("#eu", {
+      display: "none",
+      opacity: 0,
+      y: 100
+    }, {
+      delay: 4.8,
+      opacity: 1,
+      display: "block",
+      y: 0
+    })
+
+    document.addEventListener("mousemove", (e) => {
+      const layers = document.querySelectorAll(".parallax-layer");
+
+      // Captura a posição do mouse
+      const x = e.clientX;
+      const y = e.clientY;
+
+      layers.forEach((layer) => {
+        // Puxa a velocidade definida no HTML
+        const speed = layer.getAttribute("data-speed");
+
+        // Calcula o deslocamento (dividimos por 100 para o movimento ser sutil)
+        const xOffset = (window.innerWidth / 2 - x) * (speed / 100);
+        const yOffset = (window.innerHeight / 2 - y) * (speed / 100);
+
+        // Aplica o movimento
+        layer.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+      });
+    });
 
     return () => {
       splith1.revert();
@@ -88,49 +131,63 @@ function App() {
 
   return (
     <>
-    
-    <div className="app-container">
-      {/* SEÇÃO DO ZOOM (Hero) */}
-      <section className="zoom-hero" ref={containerRef}>
 
-        <nav id="navbar">
-          <div id='logo'>
-            <span>DD</span>
+      <div className="app-container">
+        {/* SEÇÃO DO ZOOM (Hero) */}
+        <section className="zoom-hero" ref={containerRef}>
+
+          <nav id="navbar">
+            <div id='logo'>
+              <span>DD</span>
+            </div>
+
+            <ul type='none'>
+              <li>Home</li>
+              <li>Projetos</li>
+              <li>Sobre</li>
+              <li>Contato</li>
+            </ul>
+          </nav>
+
+
+          <div className="zoom-content">
+            <h1 id="name">Eai! eu sou o Erick Duarte 🖖</h1>
+            <h1 className="zoom-text" id='h1-first' ref={zoomTextRef}>
+              DESENVOLVEDOR
+            </h1>
+            <p id='pp' ref={subtle}>FULLSTACK</p>
           </div>
 
-          <ul type='none'>
-            <li>Home</li>
-            <li>Projetos</li>
-            <li>Sobre</li>
-            <li>Contato</li>
-          </ul>
-        </nav>
+          <div id="box-box-eu" >
+            <div id="eu">
 
-        <div id="eu"></div>
+              <div id="js" className='icons-eu parallax-layer' data-speed='.9'></div>
+              <div id="css" className='icons-eu parallax-layer' data-speed='0.6'></div>
+              <div id="html" className='icons-eu parallax-layer' data-speed='1'></div>
+              <div id="node" className='icons-eu parallax-layer' data-speed='.4'></div>
+              <div id="mongodb" className='icons-eu parallax-layer' data-speed='.6'></div>
+              <div id="express" className='icons-eu parallax-layer' data-speed='1'></div>
 
-        <div className="zoom-content">
-          <h1 className="zoom-text" id='h1-first' ref={zoomTextRef}>
-            DESENVOLVEDOR
-          </h1>
-          <p id='pp' ref={subtle}>FULLSTACK</p>
-        </div>
-      </section>
+            </div>
+          </div>
 
-      {/* PRÓXIMA SEÇÃO (O que será revelado) */}
-      <section className="next-section">
-        <h2>Bem-vindo ao meu mundo.</h2>
-        <p>Aqui é onde a jornada começa de verdade depois de passar pelo portal.</p>
-        {/* Mais conteúdo... */}
-        <DotLottieReact
-          src="assets/coding.lottie"
-          loop
-          autoplay
-        />
-      </section>
-      <section className="next-section" style={{ background: '#111' }}>
-        <p>Mais espaço para scroll...</p>
-      </section>
-    </div>
+        </section>
+
+        {/* PRÓXIMA SEÇÃO (O que será revelado) */}
+        <section className="next-section">
+          <h2>Bem-vindo ao meu mundo.</h2>
+          <p>Aqui é onde a jornada começa de verdade depois de passar pelo portal.</p>
+          {/* Mais conteúdo... */}
+          <DotLottieReact
+            src="assets/coding.lottie"
+            loop
+            autoplay
+          />
+        </section>
+        <section className="next-section" style={{ background: '#111' }}>
+          <p>Mais espaço para scroll...</p>
+        </section>
+      </div>
     </>
   );
 }
