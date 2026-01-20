@@ -2,7 +2,7 @@ import './App.css';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from 'gsap/SplitText';
-import { useLayoutEffect, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 gsap.registerPlugin(SplitText);
@@ -19,8 +19,8 @@ function App() {
 
     gsap.from(split.lines, {
       duration: 1,
+      delay: 1.6,
       x: -100,
-      y: 100,
       autoAlpha: 0,
       stagger: {
         amount: 0.06,
@@ -39,7 +39,7 @@ function App() {
     let splith1 = SplitText.create("#h1-first", { type: "chars" });
 
     gsap.from(splith1.chars, {
-      duration: 1,
+      duration: 1.5,
       y: 100,
       autoAlpha: 0,
       stagger: {
@@ -50,45 +50,41 @@ function App() {
       ease: "power2.out"
     });
 
+    gsap.to("#h1-first", {
+      delay:3.6,
+      y: -25,
+      fontSize: "4rem",
+      textAlign: "left",
+      display: "block",
+      ease: "power1.inOut"
+    })
+    gsap.to(".zoom-content", {
+      delay: 3.6,
+      position: "absolute",
+      left: 0,
+      marginRight: "auto",
+      ease: "power1.inOut"
+    })
+    gsap.fromTo("#navbar",{
+      opacity: 0,
+      y: -100
+    }, {
+      delay:4,
+      opacity: 1,
+      y: 0,
+      display: "flex"
+    })
+    gsap.to("#pp", {
+      delay: 3.6,
+      y:-18,
+      x: -4
+    })
+
     return () => {
       splith1.revert();
     };
   }, [])
 
-  useLayoutEffect(() => {
-    // Criamos um contexto do GSAP para facilitar a limpeza depois
-    let ctx = gsap.context(() => {
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current, // O elemento que dispara a animação
-          start: "top top", // Começa quando o topo do container bate no topo da tela
-          end: "+=300%", // A animação vai durar o equivalente a 3x a altura da tela de scroll
-          scrub: 1, // O "1" dá um atraso suave de 1 segundo entre o scroll e a animação
-          pin: true, // FIXA o container na tela durante a animação
-          // markers: true // Descomente para ver os marcadores de início/fim na tela (debug)
-        }
-      });
-
-      tl.to(subtle.current, {
-        opacity: 0,
-        color: '#15151b',
-        x: -50,
-        duration: 0.002
-      })
-
-      tl.to(zoomTextRef.current, {
-        scale: 150, // Aumenta a escala em 150 vezes!
-        // Opcional: um leve movimento no eixo Z para ajudar na performance do navegador
-        z: 1,
-        ease: "power1.inOut", // Uma aceleração suave no início e no fim
-        duration: 2
-      });
-
-    }, containerRef); // Escopo do contexto
-
-    return () => ctx.revert(); // Limpeza crucial para o React não bugar
-  }, []);
 
   return (
     <>
@@ -96,6 +92,22 @@ function App() {
     <div className="app-container">
       {/* SEÇÃO DO ZOOM (Hero) */}
       <section className="zoom-hero" ref={containerRef}>
+
+        <nav id="navbar">
+          <div id='logo'>
+            <span>DD</span>
+          </div>
+
+          <ul type='none'>
+            <li>Home</li>
+            <li>Projetos</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+          </ul>
+        </nav>
+
+        <div id="eu"></div>
+
         <div className="zoom-content">
           <h1 className="zoom-text" id='h1-first' ref={zoomTextRef}>
             DESENVOLVEDOR

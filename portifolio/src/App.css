@@ -13,7 +13,7 @@
   width: 100vw;
   margin: auto auto;
   height: 100vh;
-  background-color: #15151b;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,10 +21,30 @@
   position: relative;
   z-index: 10;
 }
+
+header{
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+#box-principal{
+  justify-self: start;
+}
+nav{
+  align-self: start;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-self: center;
+  width: auto;
+}
 h1#h1-first{
   color: #888;
   display: flex;
   font-size: 7rem;
+  font-weight: 900;
   transform-origin: center center;
 }
 #pp {
@@ -36,6 +56,7 @@ h1#h1-first{
   width: fit-content;
   box-sizing: border-box;
   line-height: 1; 
+  padding-left: 10px;
 }
 .next-section {
   min-height: 100vh;
@@ -73,30 +94,55 @@ html, body {
 
 /* Container da seção de Zoom */
 .zoom-hero {
-  width: 100vw;
+  width: 89vw;
   height: 100vh;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #15151b; /* Mesma cor do seu hero anterior */
-  /* CRUCIAL: Impede que o texto gigante vaze para fora */
+  /* background-color: #15151b; */
+  background: radial-gradient(#000 #0a0718);
   overflow: hidden;
   position: relative;
-  z-index: 10; /* Garante que fique acima da próxima seção inicialmente */
 }
 
-/* O texto que vai crescer */
-.zoom-text {
-  font-size: 10vw; /* Tamanho inicial grande e responsivo */
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 0;
-  /* O "will-change" avisa o navegador que este elemento vai mudar muito,
-     ajudando na performance da renderização */
-  will-change: transform;
-  /* Centraliza o ponto de origem do zoom no meio do texto */
-  transform-origin: center center;
+.app-container{
+  /* background-color: #15151b; */
+  background: radial-gradient(#1a1919a9, #010103, #0b0b1f);
+  width: 100vw; 
+}
+
+
+#navbar{
+  color: #acbdc2dc;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.041);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 56vw;
+  height: 48px;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+#eu{
+  background: url('imagens/Erick.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid ;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  top: 1px;
 }
 
 /* A próxima seção */
