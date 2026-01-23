@@ -1,19 +1,23 @@
-*{
+@import "tailwindcss";
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  font-family: Manrope;
 }
+
 #root {
   max-width: 1280px;
   text-align: center;
 }
 
-.hero{
+.hero {
   width: 100vw;
   margin: auto auto;
   height: 100vh;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +26,7 @@
   z-index: 10;
 }
 
-header{
+header {
   width: 80vw;
   height: 100vh;
   display: flex;
@@ -30,40 +34,199 @@ header{
   flex-flow: column nowrap;
 }
 
-#box-principal{
+#box-principal {
   justify-self: start;
 }
-nav{
+
+nav {
   align-self: start;
   display: flex;
   flex-flow: row nowrap;
   justify-self: center;
   width: auto;
 }
-h1#h1-first{
+
+h1#h1-first {
   color: #888;
   display: flex;
   font-size: 7rem;
   font-weight: 900;
   transform-origin: center center;
 }
-#name{
+
+#name {
   color: #517ba3;
   font-family: 'Trebuchet MS';
   text-align: left;
   margin-bottom: 20px;
+  font-size: 3rem;
 }
+
+#saudação {
+  position: relative;
+}
+
+#box-btn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#first-button {
+  position: relative;
+  margin: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0;
+  border-radius: 23px;
+}
+
+#first-button:focus {
+  border: none;
+}
+
+#first-button>span {
+  border-radius: 23px;
+  display: block;
+  background: linear-gradient(120deg, #08142b, #28c1fd, #1e1b38);
+  background-size: 400% 400%;
+  -moz-animation: gradient 3s ease-in-out infinite;
+  -webkit-animation: gradient 3s ease-in-out infinite;
+  animation: gradient 3s ease-in-out infinite;
+  color: #fff;
+  padding: 12px 55px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 14% 0%;
+  }
+
+  50% {
+    background-position: 87% 100%;
+  }
+
+  100% {
+    background-position: 14% 0%;
+  }
+}
+
+#box-arrow {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#arrow {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+#arrow-svg {
+  background: url('imagens/arrow.svg');
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#p-arrow {
+  color: #acbdc2dc;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+#h2-projects{
+  font-size: 5.3rem;
+  font-weight: 200;
+}
+
+#grid-box {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  padding: 5px 10px;
+  width: 90vw;
+  max-width: 1500px;
+  height: 70vh;
+  max-height: 900px;
+}
+
+.project-card-left {
+  background-color: #517ba3;
+  width: 100%;
+  height: 100%;
+}
+
+.project-card-right {
+  background-color: #517ba3;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#left-box {
+  width: 50%;
+  height: 100%;
+  padding: 10px 0 10px 10px;
+}
+
+#right-box {
+  width: 50%;
+  height: 100%;
+  gap: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px 10px 10px 0;
+}
+
+.first-card {
+  background: linear-gradient(#0000008c),
+              url("imagens/m.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.second-card {
+  background: linear-gradient(#0000008c),
+              url("imagens/dashboard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.thirty-card {
+  background: linear-gradient(#0000001e),
+              url("imagens/nobre.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #pp {
   color: #61dafbaa;
   font-size: 1.2rem;
   text-align: left;
-  padding-left: 20px; 
+  padding-left: 20px;
   display: block;
   width: fit-content;
   box-sizing: border-box;
-  line-height: 1; 
+  line-height: 1;
   padding-left: 10px;
 }
+
 .next-section {
   min-height: 100vh;
   background-color: #0a0a0a;
@@ -73,29 +236,34 @@ h1#h1-first{
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  z-index: 5; /* Fica "atrás" do hero */
+  z-index: 5;
+  /* Fica "atrás" do hero */
 }
 
 .word {
-  display: inline-block !important; 
+  display: inline-block !important;
   vertical-align: middle !important;
-  white-space: normal !important; 
+  white-space: normal !important;
   position: relative !important;
   margin: 0;
   padding: 0;
 }
-#first{
+
+#first {
   display: flex;
   flex-direction: column;
   gap: 11px;
 }
 
 /* App.css */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a; /* Cor de fundo geral */
-  overflow-x: hidden; /* Prevenção extra contra scroll lateral */
+  background-color: #0a0a0a;
+  /* Cor de fundo geral */
+  overflow-x: hidden;
+  /* Prevenção extra contra scroll lateral */
 }
 
 /* Container da seção de Zoom */
@@ -113,14 +281,14 @@ html, body {
   position: relative;
 }
 
-.app-container{
+.app-container {
   /* background-color: #15151b; */
   background: radial-gradient(#1a1919a9, #010103, #0b0b1f);
-  width: 100vw; 
+  width: 100vw;
 }
 
 
-#navbar{
+#navbar {
   color: #acbdc2dc;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.041);
@@ -135,16 +303,18 @@ html, body {
   border-radius: 30px;
   margin-top: 20px;
 }
-ul{
+
+ul {
   display: flex;
   flex-direction: row;
   gap: 24px;
 }
-#eu{
+
+#eu {
   background: url('imagens/Erick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  border: 1px solid ;
+  border: 1px solid;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -154,7 +324,7 @@ ul{
 
 }
 
-#js{
+#js {
   background: url('imagens/js.png');
   width: 30px;
   height: 30px;
@@ -164,7 +334,8 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 }
-#css{
+
+#css {
   background: url('imagens/css-3.png');
   width: 30px;
   height: 30px;
@@ -174,7 +345,8 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 }
-#html{
+
+#html {
   background: url('imagens/html.png');
   width: 30px;
   height: 30px;
@@ -185,7 +357,7 @@ ul{
   background-repeat: no-repeat;
 }
 
-#node{
+#node {
   background: url('imagens/node-js.png');
   width: 30px;
   height: 30px;
@@ -195,7 +367,8 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 }
-#mongodb{
+
+#mongodb {
   background: url('imagens/mongodb-svgrepo-com.svg');
   width: 30px;
   height: 30px;
@@ -205,7 +378,8 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 }
-#express{
+
+#express {
   background: url('imagens/react.svg');
   width: 40px;
   height: 40px;
@@ -215,10 +389,13 @@ ul{
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .parallax-layer {
   position: absolute;
-  will-change: transform; /* Otimiza a performance para animação */
-  transition: transform 0.1s ease-out; /* Suaviza o movimento do mouse */
+  will-change: transform;
+  /* Otimiza a performance para animação */
+  transition: transform 0.1s ease-out;
+  /* Suaviza o movimento do mouse */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +412,8 @@ ul{
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  z-index: 5; /* Fica "atrás" do hero */
+  z-index: 5;
+  /* Fica "atrás" do hero */
 }
 
 .next-section h2 {
