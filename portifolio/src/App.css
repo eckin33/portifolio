@@ -1,7 +1,5 @@
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   user-select: none;
   font-family: Manrope;
@@ -149,94 +147,6 @@ h1#h1-first {
   font-size: 1.1rem;
   font-weight: 700;
 }
-#h2-projects{
-  font-size: 5.3rem;
-  font-weight: 200;
-  margin-bottom: 90px ;
-  text-align: left;
-}
-
-#grid-box {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 20px;
-  padding: 5px 10px;
-  width: 90vw;
-  max-width: 1500px;
-  height: 70vh;
-  max-height: 900px;
-}
-
-.project-card-left {
-  background-color: #517ba3;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  position: relative;
-}
-.text-project-card {
-  position: relative;
-  top: 80px;
-  color: white;
-}
-.text-project-card-rp {
-  position: relative;
-  bottom: 80px;
-  color: white;
-}
-.text-project-card-dp {
-  position: relative;
-  top: 80px;
-  color: white;
-}
-.project-card-right {
-  background-color: #517ba3;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-}
-.thirty-card{
-  justify-content: end;
-}
-
-#left-box {
-  width: 50%;
-  height: 100%;
-  padding: 10px 0 10px 10px;
-  
-}
-
-#right-box {
-  width: 50%;
-  height: 100%;
-  gap: 20px;
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 10px 10px 10px 0;
-}
-
-.first-card {
-  background: linear-gradient(#0000008c),
-              url("imagens/m.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.second-card {
-  background: linear-gradient(#0000008c),
-              url("imagens/dashboard.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-}
-.thirty-card {
-  background: linear-gradient(#0000001e),
-              url("imagens/nobre.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 #pp {
   color: #61dafbaa;
@@ -251,8 +161,8 @@ h1#h1-first {
 }
 
 .next-section {
-  min-height: 100vh;
-  height: 1500px;
+  min-height: 80vh;
+  max-height: 1000px;
   background-color: #0a0a0a;
   color: #fff;
   display: flex;
@@ -261,7 +171,18 @@ h1#h1-first {
   justify-content: center;
   padding: 2rem;
   z-index: 5;
-  /* Fica "atrás" do hero */
+}
+.next-section-sobre {
+  min-height: 80vh;
+  max-height: 1000px;
+  background-color: #181717;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 5;
 }
 
 .word {
@@ -358,6 +279,13 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#js-s {
+  background: url('imagens/js.png');
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 #css {
   background: url('imagens/css-3.png');
@@ -366,6 +294,13 @@ ul {
   position: relative;
   bottom: 55px;
   right: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#css-s {
+  background: url('imagens/css-3.png');
+  width: 30px;
+  height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -380,6 +315,23 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#html-s{
+  background: url('imagens/html.png');
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.background-stacks{
+  width: 50px;
+  height: 50px;
+  background-color: #acababa4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  
+}
 
 #node {
   background: url('imagens/node-js.png');
@@ -388,6 +340,13 @@ ul {
   position: relative;
   top: 35px;
   left: 215px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#node-s {
+  background: url('imagens/node-js.png');
+  width: 30px;
+  height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -402,6 +361,13 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+#mongo-s {
+  background: url('imagens/mongodb-svgrepo-com.svg');
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 #express {
   background: url('imagens/react.svg');
@@ -410,6 +376,13 @@ ul {
   position: relative;
   top: 45px;
   left: 145px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#react-s {
+  background: url('imagens/react.svg');
+  width: 40px;
+  height: 40px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -440,7 +413,11 @@ ul {
   /* Fica "atrás" do hero */
 }
 
-.next-section h2 {
-  font-size: 3rem;
-  color: #61dafbaa;
+#img-box-sobre{
+  background: url('imagens/Erick.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 400px;
+  height: 480px;
+  margin: 0 20px;
 }

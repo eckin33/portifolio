@@ -13,8 +13,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { CardImage } from "./components/card.jsx";
-import nobreImg from './imagens/nobre-mockup.png'
-import dashboardImg from './imagens/dashboard-mk.png'
+import nobreImg from './imagens/nobre-mk.png'
+import dashboardImg from './imagens/dashmk.png'
 import idfImg from './imagens/idfmk.png'
 
 gsap.registerPlugin(SplitText);
@@ -222,7 +222,6 @@ function App() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="app-container">
-            {/* SEÇÃO DO ZOOM (Hero) */}
             <section className="zoom-hero" ref={containerRef}>
 
               <nav id="navbar">
@@ -266,7 +265,6 @@ function App() {
 
               <div id="box-arrow">
                 <div id="arrow">
-
                   <div id="arrow-svg"></div>
                   <p id="p-arrow" className='font-light'>Role para ver mais</p>
                 </div>
@@ -274,70 +272,87 @@ function App() {
 
             </section>
 
-            <section className="next-section">
-              <h2 id='h2-projects'>Projetos</h2>
-
-              <div id="grid-box">
-
-                <div id="left-box">
-                  <div className="project-card-left first-card">
-                    <div className="text-project-card">
-                      <h3>Ideal Focus</h3>
-                      <p>Um App de produtividade com 3 funcionalidades principais, Cadastro e Login de usuários</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="right-box">
-                  <div className="project-card-right second-card">
-                    <div className="text-project-card-rp">
-                      <h3>Dashboard</h3>
-                      <p>App que consome dados disparados pelo IdealFocus e mostra insights com base no desempenho do usuários.</p>
-                    </div>
-                  </div>
-                  <div className="project-card-right thirty-card">
-                    <div className="text-project-card-dp">
-                      <h3>Site focado em conversão de clientes</h3>
-                      <p>Projeto para uma agencia de marketing. Projeto focado na UI, desingn elegante e animações suaves.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </section>
             <section className="next-section" style={{ background: '#111' }}>
               <h3 className='text-6xl p-10'>Projetos</h3>
               <Carousel>
-                <CarouselContent className={"max-w-[1000px]"}>
+                <CarouselContent className={"max-w-250"}>
                   <CarouselItem className="w-full flex justify-center items-center">
-                    <CardImage 
+                    <CardImage
                       img={idfImg}
-                      titulo = "IdealFocus"
-                      descricao = "O IdFocus é um APP de produtividade. Aplicação FULLSTACK com sistema de Login, registra dados para futuros insights."
+                      titulo="IdealFocus"
+                      descricao="O IdFocus é um APP de produtividade. Aplicação FULLSTACK com sistema de Login, registra dados para futuros insights."
                     />
                   </CarouselItem>
                   <CarouselItem className="w-full flex justify-center items-center">
-                    <CardImage 
+                    <CardImage
                       img={dashboardImg}
-                      titulo = "Metrics UI"
-                      descricao = "Metrics UI é um APP de métricas, todos os dados gerados na aplicação IdFocus são mostrados aqui. Aplicação FULLSTACK."
+                      titulo="Metrics UI"
+                      descricao="Metrics UI é um APP de métricas, todos os dados gerados na aplicação IdFocus são mostrados aqui. Aplicação FULLSTACK."
                     />
                   </CarouselItem>
 
-                  <CarouselItem className="w-full flex justify-center items-center border">
-                    <CardImage 
+                  <CarouselItem className="w-full flex justify-center items-center ">
+                    <CardImage
                       img={nobreImg}
-                      titulo = "Nobre Soluções Digitais"
-                      descricao = "O site da Nobre é focado em UI, com animações suaves, cores e elementos que agradam o usuário."
+                      titulo="Nobre Soluções Digitais"
+                      descricao="O site da Nobre é focado em UI, com animações suaves, cores e elementos que agradam o usuário."
                     />
                   </CarouselItem>
-                  
+
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
             </section>
+
+            <section className='next-section'>
+              <h3 className='font-bold text-8xl mb-8'>Minhas Stacks</h3>
+
+              <ul id="stacks" type="none" className=' flex gap-8 justify-center p-4 mt-8 w-full'>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'>
+                  <div className="background-stacks">
+                    <div id="html-s"></div>
+                  </div>
+                  HTML
+                </li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  <div id="css-s"></div>
+                </div>CSS</li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  <div id="js-s"></div>
+                </div>JAVASCRIPT</li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  <div id="node-s" ></div>
+                </div>NODE.JS</li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  <div id="react-s"></div>
+                </div>REACT.JS</li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  <div id="mongo-s"></div>
+                </div>MONGODB</li>
+              </ul>
+            </section>
+
+            <section className="next-section-sobre ">
+              <div id="sobre" className='w-full '>
+                <div id="box-sobre" className='w-full flex flex-row justify-center items-center'>
+                  <div id="img-box-sobre" className='w-1/2 rounded-lg'></div>
+                  <div id="text-box-sobre" className='w-1/2 p-4'>
+                    <h4 className='text-5xl font-medium mb-4'>Sobre mim</h4>
+                    <p>Me chamo Erick Duarte, graduando no curso de Análise e Desenvolvimento de Sistemas pela instituição Senac e Desenvolvedor FullStack. Desenvolvo páginas e sistemas web responsívos e de layout atrativo. Hoje, com muito estudo na área de desenvolvimento vivo o aprendizado continuo, focando em tecnologias JavaScript. Busco oportunidades no mercado como dev.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="next-section-contato">
+              <div id="box-contato">
+                <h5>Fale comigo</h5>
+                <a href="#">erickdubisoj4@gmail.com</a>
+                <a href="#">LinkedIn.com/erick</a>
+              </div>
+            </section>
+
           </div>
         </div>
       </div>
