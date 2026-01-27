@@ -5,16 +5,29 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SplitText } from 'gsap/SplitText';
 import { useRef, useEffect } from "react";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { CardImage } from "./components/card.jsx";
+import nobreImg from './imagens/nobre-mockup.png'
+import dashboardImg from './imagens/dashboard-mk.png'
+import idfImg from './imagens/idfmk.png'
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollSmoother);
 
 function App() {
+
   // Referências para os elementos que vamos manipular
   const containerRef = useRef(null);
   const zoomTextRef = useRef(null);
   const subtle = useRef(null)
+
 
   useEffect(() => {
     let split = SplitText.create("#pp", { type: "lines", wordsClass: "word" });
@@ -218,17 +231,17 @@ function App() {
                 </div>
 
                 <ul type='none'>
-                  <li>Home</li>
-                  <li>Projetos</li>
-                  <li>Sobre</li>
-                  <li>Contato</li>
+                  <li className='font-light text-sm cursor-pointer '>Home</li>
+                  <li className='font-light text-sm cursor-pointer '>Projetos</li>
+                  <li className='font-light text-sm cursor-pointer '>Sobre</li>
+                  <li className='font-light text-sm cursor-pointer '>Contato</li>
                 </ul>
               </nav>
 
 
               <div className="zoom-content">
-                <h1 id="name">Eai! eu sou o Erick Duarte <span id="saudacao">🖖</span></h1>
-                <h1 className="zoom-text" id='h1-first' ref={zoomTextRef}>
+                <h1 id="name" >Eai! eu sou o Erick Duarte <span id="saudacao">🖖</span></h1>
+                <h1 className="font-bold zoom-text" id='h1-first' ref={zoomTextRef}>
                   DESENVOLVEDOR
                 </h1>
                 <p id='pp' ref={subtle}>FULLSTACK</p>
@@ -255,13 +268,12 @@ function App() {
                 <div id="arrow">
 
                   <div id="arrow-svg"></div>
-                  <p id="p-arrow">Role para ver mais</p>
+                  <p id="p-arrow" className='font-light'>Role para ver mais</p>
                 </div>
               </div>
 
             </section>
 
-            {/* PRÓXIMA SEÇÃO (O que será revelado) */}
             <section className="next-section">
               <h2 id='h2-projects'>Projetos</h2>
 
@@ -269,19 +281,25 @@ function App() {
 
                 <div id="left-box">
                   <div className="project-card-left first-card">
-                    <h3>Ideal Focus</h3>
-                    <p>Descrição do projeto 1.</p>
+                    <div className="text-project-card">
+                      <h3>Ideal Focus</h3>
+                      <p>Um App de produtividade com 3 funcionalidades principais, Cadastro e Login de usuários</p>
+                    </div>
                   </div>
                 </div>
 
                 <div id="right-box">
                   <div className="project-card-right second-card">
-                    <h3>Projeto 2</h3>
-                    <p>Descrição do projeto 2.</p>
+                    <div className="text-project-card-rp">
+                      <h3>Dashboard</h3>
+                      <p>App que consome dados disparados pelo IdealFocus e mostra insights com base no desempenho do usuários.</p>
+                    </div>
                   </div>
                   <div className="project-card-right thirty-card">
-                    <h3>Projeto 3</h3>
-                    <p>Descrição do projeto 3.</p>
+                    <div className="text-project-card-dp">
+                      <h3>Site focado em conversão de clientes</h3>
+                      <p>Projeto para uma agencia de marketing. Projeto focado na UI, desingn elegante e animações suaves.</p>
+                    </div>
                   </div>
                 </div>
 
@@ -289,7 +307,36 @@ function App() {
 
             </section>
             <section className="next-section" style={{ background: '#111' }}>
-              <p>Mais espaço para scroll...</p>
+              <h3 className='text-6xl p-10'>Projetos</h3>
+              <Carousel>
+                <CarouselContent className={"max-w-[1000px]"}>
+                  <CarouselItem className="w-full flex justify-center items-center">
+                    <CardImage 
+                      img={idfImg}
+                      titulo = "IdealFocus"
+                      descricao = "O IdFocus é um APP de produtividade. Aplicação FULLSTACK com sistema de Login, registra dados para futuros insights."
+                    />
+                  </CarouselItem>
+                  <CarouselItem className="w-full flex justify-center items-center">
+                    <CardImage 
+                      img={dashboardImg}
+                      titulo = "Metrics UI"
+                      descricao = "Metrics UI é um APP de métricas, todos os dados gerados na aplicação IdFocus são mostrados aqui. Aplicação FULLSTACK."
+                    />
+                  </CarouselItem>
+
+                  <CarouselItem className="w-full flex justify-center items-center border">
+                    <CardImage 
+                      img={nobreImg}
+                      titulo = "Nobre Soluções Digitais"
+                      descricao = "O site da Nobre é focado em UI, com animações suaves, cores e elementos que agradam o usuário."
+                    />
+                  </CarouselItem>
+                  
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </section>
           </div>
         </div>
