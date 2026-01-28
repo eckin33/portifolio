@@ -91,9 +91,7 @@ function App() {
       delay: 4,
       opacity: 1,
       y: 0,
-      display: "flex",
-      position: "fixed",
-      top: 0
+
     })
 
     //fullstack
@@ -223,10 +221,6 @@ function App() {
   return (
     <>
       <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <div className="app-container">
-            <section className="zoom-hero" ref={containerRef}>
-
               <nav id="navbar">
                 <div id='logo'>
                   <span>DD</span>
@@ -239,6 +233,10 @@ function App() {
                   <li className='font-light text-sm cursor-pointer '>Contato</li>
                 </ul>
               </nav>
+        <div id="smooth-content">
+          <div className="app-container">
+            <section className="zoom-hero" ref={containerRef}>
+
 
 
               <div className="zoom-content">
@@ -276,7 +274,7 @@ function App() {
             </section>
 
             <section className="next-section-projetos">
-              <h3 className='text-6xl p-10 titulos'>Projetos</h3>
+              <h3 className='font-bold text-8xl mb-14 mt-14' id='h3-stacks'>Projetos</h3>
               <Carousel>
                 <CarouselContent className={"max-w-250"}>
                   <CarouselItem className="carrosel-item w-full flex justify-center items-center">
@@ -312,28 +310,26 @@ function App() {
             </section>
 
             <section className='next-section'>
-              <h3 className='font-bold text-8xl mb-8'>Minhas Stacks</h3>
+              <h3 className='font-bold text-8xl mb-8' id='h3-stacks'>Minhas Stacks</h3>
 
               <ul id="stacks" type="none" className=' flex gap-8 justify-center p-4 mt-8 w-full'>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'>
                   <div className="background-stacks">
                     <div id="html-s"></div>
-                  </div>
-                  HTML
-                </li>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                  </div>HTML</li>
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'><div className="background-stacks">
                   <div id="css-s"></div>
                 </div>CSS</li>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'><div className="background-stacks">
                   <div id="js-s"></div>
                 </div>JAVASCRIPT</li>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'><div className="background-stacks">
                   <div id="node-s" ></div>
                 </div>NODE.JS</li>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'><div className="background-stacks">
                   <div id="react-s"></div>
                 </div>REACT.JS</li>
-                <li className='text-xs w-22 text-center flex flex-col justify-center items-center'><div className="background-stacks">
+                <li className='text-xs w-22 text-center flex flex-col justify-center items-center gap-2'><div className="background-stacks">
                   <div id="mongo-s"></div>
                 </div>MONGODB</li>
               </ul>
@@ -341,20 +337,23 @@ function App() {
 
             <section className="next-section-sobre ">
               <div id="sobre" className='w-full '>
-                <div id="box-sobre" className='w-full flex flex-row justify-center items-center'>
+                <div id="box-sobre" className='w-full flex flex-row justify-center items-center gap-5'>
                   <div id="img-box-sobre" className='w-1/2 rounded-lg '>
                     <div id='boneco-sentado'></div>
                     <div id='boneco-voando'></div>
                     <div id='boneco-encostado'></div>
                     <div id="dedsec"></div>
                   </div>
-                  <div id="text-box-sobre" className='w-1/2 p-4'>
+                  <div id="text-box-sobre" className='w-1/2 p-4 mb-14 '>
 
                     <h4 className='text-5xl font-medium mb-8 ' id='h-sobre'>Sobre mim</h4>
-                    <p className='p-sobre'>
+                    <p className='p-sobre text-lg '>
                       Me chamo Erick Duarte, graduando no curso de Análise e Desenvolvimento de Sistemas pela instituição Senac e Desenvolvedor FullStack.
                     </p>
-                    <p className='p-sobre'>
+                    <p className='p-sobre text-lg '>
+                      Desenvolvo páginas e sistemas web responsívos e de layout atrativo. Hoje, com muito estudo na área de desenvolvimento vivo o aprendizado continuo, focando em tecnologias JavaScript. Busco oportunidades no mercado como dev.
+                    </p>
+                    <p className='p-sobre text-lg '>
                       Desenvolvo páginas e sistemas web responsívos e de layout atrativo. Hoje, com muito estudo na área de desenvolvimento vivo o aprendizado continuo, focando em tecnologias JavaScript. Busco oportunidades no mercado como dev.
                     </p>
 
