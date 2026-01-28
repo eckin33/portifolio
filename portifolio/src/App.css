@@ -1,10 +1,23 @@
+:root {
+  --bg-dark: #020c1b;
+  --bg-light: #0a192f;
+  --primary: #64ffda;
+  --gold: #D4AF37;
+  --text-main: #e6f1ff;
+  --text-secondary: #8892b0;
+  --font-heading: Manrope, sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
 
 * {
   box-sizing: border-box;
   user-select: none;
-  font-family: Manrope;
+  font-family: Poppins;
 }
-
+.titulos{
+  font-family: var(--font-heading);
+  font-weight: 200;
+}
 #root {
   max-width: 1280px;
   text-align: center;
@@ -35,13 +48,7 @@ header {
   justify-self: start;
 }
 
-nav {
-  align-self: start;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-self: center;
-  width: auto;
-}
+
 
 h1#h1-first {
   color: #888;
@@ -172,6 +179,23 @@ h1#h1-first {
   padding: 2rem;
   z-index: 5;
 }
+
+.next-section-projetos {
+  min-height: 80vh;
+  max-height: 1000px;
+  width: 100dvw;
+  background: radial-gradient(circle, #202227, #0c0c16);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 5;
+  position: relative;
+  z-index: 1;
+}
+
 .next-section-sobre {
   min-height: 80vh;
   max-height: 1000px;
@@ -247,6 +271,7 @@ body {
   padding: 0 20px;
   border-radius: 30px;
   margin-top: 20px;
+
 }
 
 ul {
@@ -279,6 +304,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 #js-s {
   background: url('imagens/js.png');
   width: 30px;
@@ -297,6 +323,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 #css-s {
   background: url('imagens/css-3.png');
   width: 30px;
@@ -315,14 +342,16 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
-#html-s{
+
+#html-s {
   background: url('imagens/html.png');
   width: 30px;
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.background-stacks{
+
+.background-stacks {
   width: 50px;
   height: 50px;
   background-color: #acababa4;
@@ -330,7 +359,7 @@ ul {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  
+
 }
 
 #node {
@@ -343,6 +372,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 #node-s {
   background: url('imagens/node-js.png');
   width: 30px;
@@ -361,6 +391,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 #mongo-s {
   background: url('imagens/mongodb-svgrepo-com.svg');
   width: 30px;
@@ -379,6 +410,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 #react-s {
   background: url('imagens/react.svg');
   width: 40px;
@@ -413,11 +445,77 @@ ul {
   /* Fica "atrás" do hero */
 }
 
-#img-box-sobre{
+#img-box-sobre {
   background: url('imagens/Erick.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 400px;
   height: 480px;
   margin: 0 20px;
+  box-shadow: 4px 4px 40px rgba(151, 240, 133, 0.116);
+}
+
+.carrosel-item {
+  /* background: linear-gradient(90deg, #00000000, #01040a7c);
+   */
+  background-color: #ffffff00;
+  backdrop-filter: blur(1px);
+}
+#boneco-sentado {
+  background: url('imagens/boneco-sentado.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 106px;
+  right: 95px;
+}
+
+#boneco-voando {
+  background: url('imagens/boneco-voando.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 160px;
+  left: 170px;
+}
+#boneco-encostado {
+  background: url('imagens/boneco-encostado.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  right: 210px;
+}
+#dedsec {
+  background: url('imagens/dedsec.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  bottom: 40px;
+  left: 120px;
+}
+#h-sobre{
+  color: #2dff50;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: Poppins;
+  text-shadow: 2px 2px 10px rgba(241, 241, 241, 0.158) ;
+}
+.p-sobre{
+  color: #f0ebebcc;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2) ;
+  margin: 20px 0;
 }
