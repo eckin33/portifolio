@@ -106,6 +106,7 @@ h1#h1-first {
   height: auto;
   display: flex;
   justify-content: left;
+  padding-left: 4px;
   align-items: center;
 }
 
@@ -249,17 +250,28 @@ h1#h1-first {
   z-index: 5;
 }
 .next-section-contato {
-  min-height: 80vh;
-  max-height: 1000px;
-  background-color: #080808;
+  height: 100%;
+  width: 80%;
+  max-width: 1680px;
+  border: 1px solid;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: space-around;
   gap: 30px;
-  padding: 2rem 3rem;
+  padding: 2rem 2rem ;
   z-index: 5;
+}
+.next-section-contato-box{
+  width: 100vw;
+  min-height: 80dvh;
+  max-height: 1000px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  background-color: #080808;
 }
 .lista-ctt{
   display: flex;
@@ -330,9 +342,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.041);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(255, 148, 228, 0.1);
   width: 56vw;
-  max-width: 1000px;
+  max-width: 710px;
   height: 48px;
   display: flex;
   justify-content: space-around;
@@ -348,11 +360,61 @@ body {
   
 
 }
+#__card{
+  border: 1px solid #ffffff2a;
+
+}
 
 ul {
   display: flex;
   flex-direction: row;
   gap: 24px;
+}
+li.li-nav {
+  position: relative; /* Essencial para o posicionamento da linha funcionar */
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff; /* Cor do texto */
+  
+  position: relative;
+  padding-bottom: 5px; /* Um respiro para a linha não colar no texto */
+}
+
+/* A MÁGICA: A linha invisível */
+li.li-nav::after {
+  content: '';
+  position: absolute;
+  width: 0%; /* Começa invisível (sem largura) */
+  height: 2px; /* Espessura da linha */
+  bottom: 0;
+  left: 0;
+  background-color: #2aef4b; /* Cor da linha (Azul React/Neon) */
+  transition: width 0.3s ease-in-out; /* Animação suave */
+}
+
+/* O GATILHO: Quando passar o mouse */
+li.li-nav:hover::after {
+  width: 100%; /* A linha cresce para ocupar todo o espaço */
+}
+
+/* Opcional: Mudar a cor do texto também */
+li.li-nav:hover {
+  color: #e0eef1;
+  transition: color 0.3s ease;
+}
+
+.li-stacks{
+  transition: transform .2s ease-in-out;
+  cursor: pointer;
+}
+.li-stacks:hover{
+  transform: scale(1.11);
+}
+
+#btn-linkedin, #btn-github{
+  box-shadow: 4px 4px 40px rgba(184, 33, 176, 0.1);
+  background: transparent;
+  backdrop-filter: blur(10px);
 }
 
 #eu {
@@ -570,6 +632,18 @@ ul {
   top: 50px;
   right: 210px;
 }
+#boneco-apontando {
+  background: url('imagens/boneco-apontando.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  right: 65%;
+  top: 200px;
+}
+
 #dedsec {
   background: url('imagens/dedsec.png');
   background-repeat: no-repeat;
@@ -604,7 +678,8 @@ ul {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
+  font-weight: 700;
   margin-bottom: 3rem;
   text-align: left;
 }
@@ -636,7 +711,7 @@ ul {
 }
 
 .edu-card:hover {
-  border-color: #61dafbaa; 
+  border-color: #2aef4b; 
   transform: translateY(-5px);
   box-shadow: 0 10px 30px -10px rgba(97, 218, 251, 0.15);
 }
