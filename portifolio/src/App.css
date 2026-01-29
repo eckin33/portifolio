@@ -46,6 +46,13 @@ html {
   box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.1);
   ;
 }
+#in-icon{
+  background: url('imagens/linkedin-161-svgrepo-com.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
 
 .hero {
   width: 100vw;
@@ -110,7 +117,7 @@ h1#h1-first {
   font-size: 14px;
   display: inline-block;
   padding: 0;
-  border-radius: 23px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -119,7 +126,7 @@ h1#h1-first {
 }
 
 #first-button>span {
-  border-radius: 23px;
+  border-radius: 12px;
   display: block;
   background: linear-gradient(120deg, #08142b, #28c1fd, #1e1b38);
   background-size: 400% 400%;
@@ -129,7 +136,7 @@ h1#h1-first {
   color: #fff;
   padding: 12px 55px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 @keyframes gradient {
@@ -588,7 +595,7 @@ ul {
   margin: 20px 0;
 }
 
-/* Container Geral */
+
 .education-section {
   padding: 4rem 2rem;
   max-width: 1280px;
@@ -603,21 +610,20 @@ ul {
 }
 
 .highlight-text {
-  color: #888; /* Ou use sua cor de destaque neon se preferir */
+  color: #888; 
 }
 
 /* O GRID MÁGICO */
 .education-grid {
   display: grid;
-  /* Cria colunas automáticas com largura mínima de 280px */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* Estilo dos Cards */
+
 .edu-card {
-  background-color: #0a0a0a; /* Fundo bem escuro */
-  border: 1px solid #222;    /* Borda sutil */
+  background-color: #0a0a0a; 
+  border: 1px solid #222;    
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
@@ -629,14 +635,13 @@ ul {
   overflow: hidden;
 }
 
-/* Efeito Hover "Gamer/Dev" */
 .edu-card:hover {
-  border-color: #61dafbaa; /* Cor do React ou sua cor Neon */
+  border-color: #61dafbaa; 
   transform: translateY(-5px);
   box-shadow: 0 10px 30px -10px rgba(97, 218, 251, 0.15);
 }
 
-/* Tipografia Interna */
+
 .course-type {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -662,30 +667,26 @@ ul {
 }
 
 .card-footer {
-  margin-top: auto; /* Empurra o rodapé para baixo */
+  margin-top: auto; 
   display: flex;
   gap: 1rem;
   font-size: 0.85rem;
   color: #555;
-  font-family: monospace; /* Toque de código */
+  font-family: monospace; 
 }
 
-/* --- DESTAQUE PARA A FACULDADE (RESPONSIVO) --- */
 
-/* No desktop, o card "featured" ocupa 2 colunas */
 @media (min-width: 768px) {
   .featured-card {
     grid-column: span 2;
     background: linear-gradient(145deg, #111, #0a0a0a);
     border-color: #333;
   }
-  
   .featured-card .course-title {
-    font-size: 1.8rem; /* Título maior para a faculdade */
+    font-size: 1.8rem; 
   }
 }
 
-/* No mobile, ele se comporta como um card normal (1 coluna) automaticamente */
 @media (max-width: 600px) {
   .education-section {
     padding: 2rem 1rem;
