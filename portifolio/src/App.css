@@ -14,9 +14,25 @@
   user-select: none;
   font-family: Poppins;
 }
+html {
+  scroll-behavior: smooth;
+}
 .titulos{
   font-family: var(--font-heading);
   font-weight: 200;
+}
+#_3-dashs{
+  width: 60px;
+  height: 60px;
+  background: url('imagens/3-dashs.png') ;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  transform: rotate(13deg);
+  
+  
 }
 #h3-stacks{
   color: #ffffff;
@@ -67,7 +83,7 @@ h1#h1-first {
 }
 
 #name {
-  color: #517ba3;
+  color: #f0f6fce5;
   font-family: 'Trebuchet MS';
   text-align: left;
   margin-bottom: 5px;
@@ -162,6 +178,13 @@ h1#h1-first {
   font-size: 1.1rem;
   font-weight: 700;
 }
+#logo{
+  background: url('imagens/dd.png');
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 #pp {
   color: #61dafbaa;
@@ -195,7 +218,6 @@ h1#h1-first {
   min-height: 100dvh;
   max-height: 1000px;
   width: 100dvw;
-  background: radial-gradient(circle, #1c1d1d, #0c0b0b);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -218,6 +240,34 @@ h1#h1-first {
   justify-content: center;
   padding: 2rem;
   z-index: 5;
+}
+.next-section-contato {
+  min-height: 80vh;
+  max-height: 1000px;
+  background-color: #080808;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 2rem 3rem;
+  z-index: 5;
+}
+.lista-ctt{
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  height: auto;
+}
+.li-ctt{
+  border-radius: 50%;
+  background-color: #ffffff1a;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .word {
@@ -261,8 +311,8 @@ body {
 }
 
 .app-container {
-  /* background-color: #15151b; */
-  background: radial-gradient(#1a1919a9, #010103, #0b0b1f);
+  background-color: #161616;
+  /* background: radial-gradient(#1a1919a9, #05060e, #08021f); */
   width: 100vw;
   
 }
@@ -536,4 +586,112 @@ ul {
   text-align: left;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.2) ;
   margin: 20px 0;
+}
+
+/* Container Geral */
+.education-section {
+  padding: 4rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.highlight-text {
+  color: #888; /* Ou use sua cor de destaque neon se preferir */
+}
+
+/* O GRID MÁGICO */
+.education-grid {
+  display: grid;
+  /* Cria colunas automáticas com largura mínima de 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Estilo dos Cards */
+.edu-card {
+  background-color: #0a0a0a; /* Fundo bem escuro */
+  border: 1px solid #222;    /* Borda sutil */
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito Hover "Gamer/Dev" */
+.edu-card:hover {
+  border-color: #61dafbaa; /* Cor do React ou sua cor Neon */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(97, 218, 251, 0.15);
+}
+
+/* Tipografia Interna */
+.course-type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.course-institution {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+.card-footer {
+  margin-top: auto; /* Empurra o rodapé para baixo */
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+  font-family: monospace; /* Toque de código */
+}
+
+/* --- DESTAQUE PARA A FACULDADE (RESPONSIVO) --- */
+
+/* No desktop, o card "featured" ocupa 2 colunas */
+@media (min-width: 768px) {
+  .featured-card {
+    grid-column: span 2;
+    background: linear-gradient(145deg, #111, #0a0a0a);
+    border-color: #333;
+  }
+  
+  .featured-card .course-title {
+    font-size: 1.8rem; /* Título maior para a faculdade */
+  }
+}
+
+/* No mobile, ele se comporta como um card normal (1 coluna) automaticamente */
+@media (max-width: 600px) {
+  .education-section {
+    padding: 2rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
 }
