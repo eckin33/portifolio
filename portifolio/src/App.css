@@ -253,7 +253,6 @@ h1#h1-first {
   height: 100%;
   width: 80%;
   max-width: 1680px;
-  border: 1px solid;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -368,6 +367,7 @@ body {
 ul {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 24px;
 }
 li.li-nav {
@@ -636,11 +636,11 @@ li.li-nav:hover {
   background: url('imagens/boneco-apontando.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 250px;
+  width: 150px;
   height: 250px;
   margin: 0 auto;
   position: relative;
-  right: 65%;
+  right: 75%;
   top: 200px;
 }
 

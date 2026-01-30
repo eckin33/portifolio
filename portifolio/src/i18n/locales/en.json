@@ -1,0 +1,23 @@
+{
+  "welcome": "Hey! My name is Erick Duarte",
+  "dev": "Developer",
+  "about": "About me",
+  "about-nav": "About",
+  "contato-nav": "Contact",
+  "projects": "Projects",
+  "role": "Scroll down to more",
+
+  "idf-desc": "The IdFocus it is about a productivity APP. It's a Full-Stack Application with Register/login system, it is keeps some data to future's insights.",
+  "metrics-desc": "The Metrics UI it is a metrics as name says, all of IdFocus data is showed here. Full-stack Application. ",
+  "nobre-desc": "Nobre's website is focused on UI, with beautiful animations, colors and elements that appeal to the user.",
+  "visit": "Visit Project",
+  "code": "code",
+  "my-stacks": "My Stacks",
+  "myself_1": "My name is Erick Duarte, I am a student in the Systems Analysis and Development program at Senac and a FullStack Developer.",
+  "myself_2": "I develop responsive web pages and systems with attractive layouts. Today, with extensive study in the field of development, I am a lifelong learner, focusing on JavaScript technologies.",
+  "g": "Graduation",
+  "c": "& courses",
+  "lets-code": "Let's code something nice!?",
+  "like-it": "Let's turn an idea into code!",
+  "get-in": "Contact me here:"
+}

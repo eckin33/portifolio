@@ -1,0 +1,22 @@
+{
+    "welcome": "Eai! Eu sou o Erick Duarte",
+    "dev": "Desenvolvedor",
+    "about": "Sobre mim",
+    "about-nav": "Sobre",
+    "contato-nav": "Contato",
+    "projects": "Projetos",
+    "role": "Role para ver mais",
+    "idf-desc": "O IdFocus é um APP de produtividade. Aplicação Full-Stack com sitema de Registro/Login de contas, registra dados para futuros insights.",
+    "metrics-desc": "Metrics UI é um APP de métricas, todos os dados gerados na aplicação IdFocus são apresentados aqui, gerando insights. Aplicação Full-Stack",
+    "nobre-desc": "O site da Nobre é focado em UI, com animações suaves, cores e elementos que agradam o usuário.",
+    "visit": "Visitar Projeto",
+    "code": "Código",
+    "my-stacks": "Minhas Stacks",
+    "myself_1": "Me chamo Erick Duarte, graduando no curso de Análise e Desenvolvimento de Sistemas pela instituição Senac e Desenvolvedor FullStack.",
+    "myself_2": "Desenvolvo páginas e sistemas web responsívos e de layout atrativo. Hoje, com muito estudo na área de desenvolvimento vivo o aprendizado continuo, focando em tecnologias JavaScript. Busco oportunidades no mercado como dev.",
+    "g": "Formação",
+    "c": "& courses",
+    "lets-code": "Bora codar algo top!?",
+    "like-it": "Vamos transformar alguma ideia em código!",
+    "get-in": "Fale comigo por aqui:"
+}

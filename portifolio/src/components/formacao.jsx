@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from 'react-i18next';
+
 import "../App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,6 +52,8 @@ const courses = [
 
 export default function Education() {
   const containerRef = useRef(null);
+  const { t } = useTranslation()
+  
 
   useEffect(() => {
 
@@ -72,7 +76,7 @@ export default function Education() {
 
   return (
     <section className="education-section" ref={containerRef}>
-      <h2 className="section-title">Formação <span className="highlight-text">& Cursos</span></h2>
+      <h2 className="section-title">{t('g')} <span className="highlight-text">{t('c')}</span></h2>
       
       <div className="education-grid">
         {courses.map((item) => (
