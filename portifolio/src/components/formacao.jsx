@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from 'react-i18next';
-
+import RevealOnScroll from "./reveal";
 import "../App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -76,7 +76,7 @@ export default function Education() {
 
   return (
     <section className="education-section" ref={containerRef}>
-      <h2 className="section-title">{t('g')} <span className="highlight-text">{t('c')}</span></h2>
+      <h2 className="section-title reveal">{t('g')} <span className="highlight-text">{t('c')}</span></h2>
       
       <div className="education-grid">
         {courses.map((item) => (

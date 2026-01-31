@@ -23,6 +23,8 @@ import dashboardImg from './imagens/dashmk.png'
 import idfImg from './imagens/idfmk.png'
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './components/languageToggler';
+import ThemeToggler from './components/themeToggler.jsx';
+import RevealOnScroll from './components/reveal.jsx';
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
@@ -30,12 +32,11 @@ gsap.registerPlugin(ScrollSmoother);
 
 function App() {
 
-  // Referências para os elementos que vamos manipular
+  // Referências para os elementos
   const containerRef = useRef(null);
   const zoomTextRef = useRef(null);
   const subtle = useRef(null)
   const { t } = useTranslation()
-
 
   useEffect(() => {
     let split = SplitText.create("#pp", { type: "lines", wordsClass: "word" });
@@ -83,6 +84,9 @@ function App() {
       duration: .8,
       ease: "power1.inOut"
     })
+    let mm = gsap.matchMedia();
+
+
     gsap.to(".zoom-content", {
       delay: 3.6,
       position: "absolute",
@@ -96,10 +100,25 @@ function App() {
       opacity: 0,
       y: -100
     }, {
+      delay: 3,
+      opacity: 1,
+      y: 0,
+    })
+    gsap.fromTo(".toggle-language", {
+      opacity: 0,
+      y: -100
+    }, {
       delay: 4,
       opacity: 1,
       y: 0,
-
+    })
+    gsap.fromTo(".toggle-theme", {
+      opacity: 0,
+      y: -100
+    }, {
+      delay: 4,
+      opacity: 1,
+      y: 0,
     })
 
     //fullstack
@@ -135,6 +154,25 @@ function App() {
       display: "block",
       y: 0
     })
+    gsap.fromTo("#btn-linkedin", {
+      opacity: 0,
+      y: 100
+    }, {
+      delay: 5,
+      duration: 1.4,
+      opacity: 1,
+      y: 0
+    })
+    gsap.fromTo("#btn-github", {
+      opacity: 0,
+      y: 100
+    }, {
+      delay: 5,
+      duration: 1.4,
+      opacity: 1,
+      y: 0
+    })
+
 
     //Nome
     gsap.fromTo("#name", {
@@ -185,18 +223,40 @@ function App() {
       ease: "power1.inOut"
     })
 
+    gsap.to("#boneco-voando", {
+      y: 27,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut"
+    })
+
+    // useEffect(() => {
+    //   mm.add("(min-width: 768px)", () => {
+    //     // DESKTOP: Anima de 7rem para 4rem
+    //     gsap.to("#h1-first", {
+    //       fontSize: "2.2rem",
+    //       delay: 3.6,
+    //       y: -25,
+    //       textAlign: "left",
+    //       display: "block",
+    //       duration: .8,
+    //       ease: "power1.inOut"
+    //     });
+    //   });
+    // }, [])
+
     document.addEventListener("mousemove", (e) => {
       const layers = document.querySelectorAll(".parallax-layer");
 
-      // Captura a posição do mouse
+      // Capturae a posição do mouse
       const x = e.clientX;
       const y = e.clientY;
 
       layers.forEach((layer) => {
-        // Puxa a velocidade definida no HTML
+
         const speed = layer.getAttribute("data-speed");
 
-        // Calcula o deslocamento (dividimos por 100 para o movimento ser sutil)
         const xOffset = (window.innerWidth / 2 - x) * (speed / 100);
         const yOffset = (window.innerHeight / 2 - y) * (speed / 100);
 
@@ -224,14 +284,14 @@ function App() {
     };
   }, [])
 
-
-
   return (<BrowserRouter>
 
     <>
-      <div id="smooth-wrapper">
-            <LanguageSwitcher></LanguageSwitcher>
-        <nav id="navbar">
+      <RevealOnScroll />
+      <div id="smooth-wrapper" >
+        <ThemeToggler></ThemeToggler>
+        <LanguageSwitcher></LanguageSwitcher>
+        <nav id="navbar" >
           <div id='logo'>
           </div>
           <ul type='none'>
@@ -250,7 +310,7 @@ function App() {
                 {t('about-nav')}
               </HashLink>
             </li>
-            <li className='font-light text-sm cursor-pointer li-nav'>
+            <li className='font-light text-sm cursor-pointer li-nav' id='li-contato'>
               <HashLink smooth to="/#box-contato">
                 {t('contato-nav')}
               </HashLink>
@@ -265,8 +325,8 @@ function App() {
               <div className="zoom-content" id='home'>
                 <h1 id="name" >{t('welcome')} <span id="saudacao"></span></h1>
 
-                <h1 className="font-extrabold zoom-text" id='h1-first' ref={zoomTextRef}>
-                  {t ('dev')}
+                <h1 className="xl:font-extrabold zoom-text sm" id='h1-first' ref={zoomTextRef}>
+                  {t('dev')}
                 </h1>
 
                 <p id='pp' ref={subtle}>FULLSTACK</p>
@@ -311,9 +371,9 @@ function App() {
 
             </section>
             <section className="next-section-projetos" id='projetos'>
-              <h3 className='font-bold text-8xl mb-14 mt-14' id='h3-stacks'>{t('projects')}</h3>
+              <h3 className='section-title font-bold text-8xl mb-14 mt-14 reveal' id='h3-stacks'>{t('projects')}</h3>
               <Carousel>
-                <CarouselContent className={"max-w-250"}>
+                <CarouselContent className={"max-w-250"} >
                   <CarouselItem className="carrosel-item w-full flex justify-center items-center">
                     <CardImage
                       img={idfImg}
@@ -351,8 +411,8 @@ function App() {
               </Carousel>
             </section>
             <section className='next-section'>
-              <h3 className='font-bold text-8xl mb-8' id='h3-stacks'>{t('my-stacks')}</h3>
-              <ul id="stacks" type="none" className=' flex gap-8 justify-center p-4 mt-8 w-full'>
+              <h3 className='font-bold lg:text-8xl text-6xl mb-8 reveal' id='h3-stacks'>{t('my-stacks')}</h3>
+              <ul id="stacks" type="none" className=' flex gap-8 justify-center p-4 mt-8 w-full reveal'>
                 <li className='li-stacks text-xs w-22 text-center flex flex-col justify-center items-center gap-2'>
                   <div className="background-stacks">
                     <div id="html-s"></div>
@@ -374,44 +434,46 @@ function App() {
                 </div>MONGODB</li>
               </ul>
             </section>
-            <section className="next-section-sobre relative">
-              <div id="_3-dashs"></div>
-              <div id="sobre" className='w-full '>
-                <div id="box-sobre" className='w-full flex flex-row justify-center items-center gap-5'>
-                  <div id="img-box-sobre" className='w-1/2 rounded-lg '>
-                    <div id='boneco-sentado'></div>
-                    <div id='boneco-voando'></div>
-                    <div id='boneco-encostado'></div>
-                    <div id="dedsec"></div>
-                  </div>
-                  <div id="text-box-sobre" className='w-1/2 p-4 mb-14 '>
-                    <h4 className='text-5xl font-medium mb-8 ' id='h-sobre'>{t('about')}</h4>
-                    <p className='p-sobre text-lg '>
-                      {t('myself_1')}
-                    </p>
-                    <p className='p-sobre text-lg '>
-                      {t('myself_2')}
-                      
-                    </p>
-                    {/* <p className='p-sobre text-lg '>
-                      
-                    </p> */}
+
+            <div id="box-next-section-sobre">
+              <section className="next-section-sobre relative">
+                <div id="_3-dashs"></div>
+                <div id="sobre" className='w-full '>
+                  <div id="box-sobre" className='w-full flex flex-row justify-center items-center gap-5'>
+                    <div id="img-box-sobre" className='w-1/2 rounded-lg reveal'>
+                      <div id='boneco-sentado'></div>
+                      <div id='boneco-voando'></div>
+                      <div id='boneco-encostado'></div>
+                      <div id="dedsec"></div>
+                    </div>
+                    <div id="text-box-sobre" className='w-1/2 p-4 mb-14 reveal'>
+                      <h4 className='text-5xl font-medium mb-8 reveal ' id='h-sobre'>{t('about')}</h4>
+                      <p className='p-sobre text-lg '>
+                        {t('myself_1')}
+                      </p>
+                      <p className='p-sobre text-lg '>
+                        {t('myself_2')}
+                      </p>
+                      {/* <p className='p-sobre text-lg '>
+              
+                      </p> */}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
 
             <Education />
 
             <div className="next-section-contato-box">
               <section className="next-section-contato relative">
-                <div id="box-ctt" className='w-3/5 flex flex-col gap-10 mt-10'>
-                  <h5 className='text-6xl font-extrabold text-left'>{t('lets-code')}</h5>
-                  <p className='text-left'>{t('like-it')}</p>
+                <div id="box-ctt" className='w-full flex flex-col gap-10 mt-10'>
+                  <h5 className='section-title text-6xl font-extrabold text-left reveal'>{t('lets-code')}</h5>
+                  <p className='text-left reveal'>{t('like-it')}</p>
                 </div>
                 <div id="box-contato" className='self-end mr-8 mb-8'>
-                  <div id="boneco-apontando"></div>
-                  <h6 className='text-3xl text-left pl-8'>{t('get-in')}</h6>
+                  <div id="boneco-apontando" className='reveal'></div>
+                  <h6 className=' text-3xl text-left pl-8 reveal' >{t('get-in')}</h6>
 
                   <ul type='none' className='lista-ctt gap-6 mt-6 text-left pl-8 w-full h-32'>
 
@@ -436,8 +498,8 @@ function App() {
                 </div>
               </section>
             </div>
-            <footer className='w-full h-34 flex justify-center items-center text-slate-200 bg-black border-t'>
-              <p>2026 Erick Duarte. Todos os direitos reservados.</p>
+            <footer className='w-full h-34 flex justify-center items-center border-t'>
+              <p>{t('direitos')}</p>
             </footer>
           </div>
         </div>

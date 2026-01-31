@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import '../App.css'
 import i18n from '../i18n/index.js';
 import { useTranslation } from 'react-i18next';
 import {
@@ -9,31 +10,32 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import RevealOnScroll from "./reveal";
 
 export function CardImage(props) {
   const { t } = useTranslation()
   
   return (
-    <Card className="relative mx-auto w-full h-124 pt-0 flex-row pb-0">
-      <div className="w-1/2 relative flex flex-col justify-center items-center">
+    <Card className="relative mx-auto w-full h-124 pt-0 flex-row pb-0 reveal" id='card-img'>
+      <div className="w-4/5 h lg:w-1/2 relative flex flex-col justify-center items-center ">
         <img
           src={props.img}
           alt="Imagem projeto portifolio"
-          className="relative z-20 h-auto w-full object-cover rounded-xl imgs-port opacity-65  brightness-75"
+          className="relative z-20 h-90 lg:h-auto w-full object-cover rounded-xl imgs-port opacity-95  brightness-65"
         />
       </div>
-      <div className="w-1/2 flex flex-col justify-center pr-4 mr-4">
+      <div className=" w-3/5 lg:w-1/2 flex flex-col justify-center pr-4 mr-4" id="box-texto-card">
         <CardHeader>
           <CardAction></CardAction>
-          <CardTitle className={"text-3xl text-slate-400 uppercase "}>{props.titulo ? props.titulo : "titulo"}</CardTitle>
+          <CardTitle className={"text-3xl card-title uppercase "}>{props.titulo ? props.titulo : "titulo"}</CardTitle>
           <span className="text-sm text-blue-400 mb-6">{props.span ? props.span : "Project Web"}</span>
-          <CardDescription className={"px-2 text-lg text-gray-300 mb-6 "}>
+          <CardDescription className={"card-desc px-2 text-lg  mb-6 "}>
             {props.descricao}
           </CardDescription>
         </CardHeader>
         <CardFooter className={"justify-center gap-8"}>
           <a href={props.projeto_link} target="_blank">
-            <button className="w-42 pt-2 pb-2 pr-2 pl-2 mt-6 rounded-sm cursor-pointer bg-blue-400 text-slate-800 font-bold flex items-center justify-center gap-2.5 text-nowrap hover:scale-105 transition-transform">{t('visit')}
+            <button className="w-42 pt-2 pb-2 pr-2 pl-2 mt-6 rounded-sm cursor-pointer bg-blue-400 text-slate-800 font-medium flex items-center justify-center gap-2.5 text-nowrap hover:scale-105 transition-transform">{t('visit')}
               <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" /></svg>
             </button>
           </a>

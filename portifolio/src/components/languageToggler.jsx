@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
 import { useRef } from 'react';
+import '../App.css'
 
 function LanguageSwitcher() {
     const { i18n } = useTranslation();
@@ -34,7 +35,7 @@ function LanguageSwitcher() {
             ref={buttonRef}
             title='Idioma/Language'
             onClick={toggleLanguage}
-            className=" flex flex-row gap-4 w-10px-3 py-1 px-2 border border-zinc-700 rounded-md hover:bg-zinc-800 transition-colors language-btn absolute top-6 h-10 right-8 z-50 text-slate-300 cursor-pointer items-center justify-center"
+            className="toggle-language flex flex-row gap-4 w-10px-3 py-1 px-2 border border-zinc-700 rounded-md transition-colors language-btn absolute top-6 h-10 right-8 z-50 cursor-pointer items-center justify-center"
         >
             {i18n.language === 'pt' ? 'POR' : 'EN'}
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
