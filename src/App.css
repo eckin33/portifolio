@@ -51,18 +51,6 @@
   scrollbar-width: thin;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #4e0b45;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-}
 
 html {
   scroll-behavior: smooth;
