@@ -75,7 +75,7 @@ html {
 #_3-dashs {
   width: 60px;
   height: 60px;
-  background: url('imagens/3-dashs.png');
+  background: url('./assets/imagens/3-dashs.webp');
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -102,7 +102,7 @@ html {
 }
 
 #in-icon {
-  background: url('imagens/linkedin-161-svgrepo-com.svg');
+  background: url('./assets/imagens/linkedin-161-svgrepo-com.svg');
   background-repeat: no-repeat;
   background-size: contain;
   width: 20px;
@@ -184,7 +184,7 @@ h1#h1-first {
 }
 
 #arrow-svg {
-  background: url('imagens/arrow.svg');
+  background: url('./assets/imagens/arrow.svg');
   width: 40px;
   height: 40px;
   position: relative;
@@ -199,7 +199,7 @@ h1#h1-first {
 }
 
 #logo {
-  background: url('imagens/dd.png');
+  background: url('./assets/imagens/dd.png');
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
@@ -466,7 +466,7 @@ li.li-nav:hover {
 }
 
 #eu {
-  background: url('imagens/Erick.jpg');
+  background: url('./assets/imagens/Erick-_1_.webp');
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid;
@@ -480,7 +480,7 @@ li.li-nav:hover {
 }
 
 #js {
-  background: url('imagens/js.png');
+  background: url('./assets/imagens/js.webp');
   width: 30px;
   height: 30px;
   position: relative;
@@ -491,7 +491,7 @@ li.li-nav:hover {
 }
 
 #js-s {
-  background: url('imagens/js.png');
+  background: url('./assets/imagens/js.webp');
   width: 30px;
   height: 30px;
   background-size: contain;
@@ -499,7 +499,7 @@ li.li-nav:hover {
 }
 
 #css {
-  background: url('imagens/css-3.png');
+  background: url('./assets/imagens/css-3.webp');
   width: 30px;
   height: 30px;
   position: relative;
@@ -510,7 +510,7 @@ li.li-nav:hover {
 }
 
 #css-s {
-  background: url('imagens/css-3.png');
+  background: url('./assets/imagens/css-3.webp');
   width: 30px;
   height: 30px;
   background-size: contain;
@@ -518,7 +518,7 @@ li.li-nav:hover {
 }
 
 #html {
-  background: url('imagens/html.png');
+  background: url('./assets/imagens/html.png');
   width: 30px;
   height: 30px;
   position: relative;
@@ -529,7 +529,7 @@ li.li-nav:hover {
 }
 
 #html-s {
-  background: url('imagens/html.png');
+  background: url('./assets/imagens/html.png');
   width: 30px;
   height: 30px;
   background-size: contain;
@@ -548,7 +548,7 @@ li.li-nav:hover {
 }
 
 #node {
-  background: url('imagens/node-js.png');
+  background: url('./assets/imagens/node-js.webp');
   width: 30px;
   height: 30px;
   position: relative;
@@ -559,7 +559,7 @@ li.li-nav:hover {
 }
 
 #node-s {
-  background: url('imagens/node-js.png');
+  background: url('./assets/imagens/node-js.webp');
   width: 30px;
   height: 30px;
   background-size: contain;
@@ -567,7 +567,7 @@ li.li-nav:hover {
 }
 
 #mongodb {
-  background: url('imagens/mongodb-svgrepo-com.svg');
+  background: url('./assets/imagens/mongodb-svgrepo-com.svg');
   width: 30px;
   height: 30px;
   position: relative;
@@ -578,7 +578,7 @@ li.li-nav:hover {
 }
 
 #mongo-s {
-  background: url('imagens/mongodb-svgrepo-com.svg');
+  background: url('./assets/imagens/mongodb-svgrepo-com.svg');
   width: 30px;
   height: 30px;
   background-size: contain;
@@ -586,7 +586,7 @@ li.li-nav:hover {
 }
 
 #express {
-  background: url('imagens/react.svg');
+  background: url('./assets/imagens/react.svg');
   width: 40px;
   height: 40px;
   position: relative;
@@ -597,7 +597,7 @@ li.li-nav:hover {
 }
 
 #react-s {
-  background: url('imagens/react.svg');
+  background: url('./assets/imagens/react.svg');
   width: 40px;
   height: 40px;
   background-size: contain;
@@ -632,7 +632,7 @@ li.li-nav:hover {
 }
 
 #img-box-sobre {
-  background: url('imagens/Erick.jpg');
+  background: url('./assets/imagens/Erick-_1_.webp');
   background-repeat: no-repeat;
   background-size: cover;
   width: 400px;
@@ -649,7 +649,7 @@ li.li-nav:hover {
 }
 
 #boneco-sentado {
-  background: url('imagens/boneco-sentado.png');
+  background: url('./assets/imagens/boneco-sentado.webp');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -661,7 +661,7 @@ li.li-nav:hover {
 }
 
 #boneco-voando {
-  background: url('imagens/boneco-voando.png');
+  background: url('./assets/imagens/boneco-voando.webp');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -673,7 +673,7 @@ li.li-nav:hover {
 }
 
 #boneco-encostado {
-  background: url('imagens/boneco-encostado.png');
+  background: url('./assets/imagens/boneco-encostado.webp');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -685,7 +685,7 @@ li.li-nav:hover {
 }
 
 #boneco-apontando {
-  background: url('imagens/boneco-apontando.png');
+  background: url('./assets/imagens/boneco-apontando.webp');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -698,7 +698,7 @@ li.li-nav:hover {
 }
 
 #dedsec {
-  background: url('imagens/dedsec.png');
+  background: url('./assets/imagens/dedsec.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
