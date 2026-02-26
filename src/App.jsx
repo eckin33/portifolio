@@ -255,16 +255,42 @@ function App() {
   }, [])
 
   useEffect(() => {
-    fetch('https://vst-tracker.vercel.app/info', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-          device: navigator.userAgent,
-          time: new Date().toISOString()
-       }),
-    })
+    async function fetchFeature() {
+      try {
+
+        let device = navigator.userAgent;
+        let time = new Date().toISOString();
+
+        const request = await fetch('https://vst-tracker.vercel.app/info', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            device: device,
+            time: time
+          })
+        })
+
+        const response = await request.json();
+
+        console.log(response)
+        console.log(device)
+        console.log(time)
+
+        if (response.status === "Sucesso") {
+          alert('ok')
+        } else {       
+          alert('erro')
+        }
+
+
+      } catch (error) {
+        console.error("Erro ao buscar dados do dashboard:", error);
+      }
+    }
+    fetchFeature();
+    
   }, [])
 
   return (<BrowserRouter>
