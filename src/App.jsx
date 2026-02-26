@@ -279,9 +279,9 @@ function App() {
         console.log(time)
 
         if (response.status === "Sucesso") {
-          alert('ok')
+          alert('tck-sucesso')
         } else {       
-          alert('erro')
+          console.log('tck-erro')
         }
 
 
