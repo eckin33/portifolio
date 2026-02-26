@@ -254,6 +254,19 @@ function App() {
     };
   }, [])
 
+  useEffect(() => {
+    fetch('https://vst-tracker.vercel.app/info', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+          device: navigator.userAgent,
+          time: new Date().toISOString()
+       }),
+    })
+  }, [])
+
   return (<BrowserRouter>
 
     <>
