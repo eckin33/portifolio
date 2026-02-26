@@ -279,7 +279,7 @@ function App() {
         console.log(time)
 
         if (response.status === "Sucesso") {
-          alert('tck-sucesso')
+          console.log('tck-sucesso')
         } else {       
           console.log('tck-erro')
         }
