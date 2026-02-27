@@ -16,10 +16,35 @@ import Sobre from './components/sobre';
 import Contato from './components/contato';
 import Footer from './components/footer';
 import Principal from './components/principal';
+import { useLocation } from 'react-router-dom';
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollSmoother);
+
+
+function Tracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const sendVisit = async () => {
+      await fetch("https://vst-tracker.vercel.app/info", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          device: navigator.userAgent,
+          time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+        })
+      });
+    };
+
+    sendVisit();
+  }, [location.pathname]);
+
+  return null;
+}
 
 function App() {
 
@@ -292,20 +317,11 @@ function App() {
     
   // }, [])
 
-  //Teste com Beacon API
-
-  useEffect(() => {
-    const data = JSON.stringify({
-      device: navigator.userAgent,
-      time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
-    });
-
-    navigator.sendBeacon('https://vst-tracker.vercel.app/info', data);
-  }, [])
 
   return (<BrowserRouter>
 
     <>
+    <Tracker />
       <RevealOnScroll />
       <div id="smooth-wrapper" >
         <ThemeToggler></ThemeToggler>
