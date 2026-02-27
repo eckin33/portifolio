@@ -28,7 +28,7 @@ function Tracker() {
 
   useEffect(() => {
     const sendVisit = async () => {
-      await fetch("https://vst-tracker.vercel.app/info", {
+      const request = await fetch("https://vst-tracker.vercel.app/info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -37,9 +37,11 @@ function Tracker() {
           project: "portfolio",
           device: navigator.userAgent,
           time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
-          gateKey: "VouCOOmprarUMViolaoaindaJhonesqueOdigaaa"
         })
       });
+      const response = await request.json();
+      console.log(response);
+
     };
 
     sendVisit();
