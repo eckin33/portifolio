@@ -34,8 +34,10 @@ function Tracker() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          project: "portfolio",
           device: navigator.userAgent,
-          time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+          time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+          gateKey: "VouCOOmprarUMViolaoaindaJhonesqueOdigaaa"
         })
       });
     };
