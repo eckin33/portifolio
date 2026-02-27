@@ -254,42 +254,53 @@ function App() {
     };
   }, [])
 
-  useEffect(() => {
-    async function fetchFeature() {
-      try {
+  // useEffect(() => {
+  //   async function fetchFeature() {
+  //     try {
 
-        let device = navigator.userAgent;
-        let time = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  //       let device = navigator.userAgent;
+  //       let time = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-        const request = await fetch('https://vst-tracker.vercel.app/info', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            device: device,
-            time: time
-          })
-        })
+  //       const request = await fetch('http://localhost:3000/info', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify({
+  //           device: device,
+  //           time: time
+  //         })
+  //       })
 
-        const response = await request.json();
+  //       const response = await request.json();
 
-        if (response.status === "Sucesso") {
-          console.log('tck-sucesso')
-        } else {       
-          console.log('tck-erro')
-        }
+  //       if (response.status === "Sucesso") {
+  //         console.log('tck-sucesso')
+  //       } else {       
+  //         console.log('tck-erro')
+  //       }
         
-      } catch (error) {
-        console.error("Erro ao contatar o Jhones:", error);
-      }
-    }
-    window.addEventListener('load', fetchFeature())
+  //     } catch (error) {
+  //       console.error("Erro ao contatar o Jhones:", error);
+  //     }
+  //   }
+  //   window.addEventListener('load', fetchFeature())
 
-    return () => {
-      window.removeEventListener('load', fetchFeature());
-    }
+  //   return () => {
+  //     window.removeEventListener('load', fetchFeature());
+  //   }
     
+  // }, [])
+
+  //Teste com Beacon API
+
+  useEffect(() => {
+    const data = JSON.stringify({
+      device: navigator.userAgent,
+      time: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+    });
+
+    navigator.sendBeacon('https://vst-tracker.vercel.app/info', data);
   }, [])
 
   return (<BrowserRouter>
