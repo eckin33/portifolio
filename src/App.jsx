@@ -261,7 +261,7 @@ function App() {
         let device = navigator.userAgent;
         let time = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-        const request = await fetch('ttps://vst-tracker.vercel.app/info', {
+        const request = await fetch('https://vst-tracker.vercel.app/info', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -279,7 +279,7 @@ function App() {
         } else {       
           console.log('tck-erro')
         }
-
+        
       } catch (error) {
         console.error("Erro ao contatar o Jhones:", error);
       }
