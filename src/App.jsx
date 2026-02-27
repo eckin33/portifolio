@@ -259,9 +259,9 @@ function App() {
       try {
 
         let device = navigator.userAgent;
-        let time = new Date().toISOString();
+        let time = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-        const request = await fetch('https://vst-tracker.vercel.app/info', {
+        const request = await fetch('ttps://vst-tracker.vercel.app/info', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -274,22 +274,21 @@ function App() {
 
         const response = await request.json();
 
-        console.log(response)
-        console.log(device)
-        console.log(time)
-
         if (response.status === "Sucesso") {
           console.log('tck-sucesso')
         } else {       
           console.log('tck-erro')
         }
 
-
       } catch (error) {
-        console.error("Erro ao buscar dados do dashboard:", error);
+        console.error("Erro ao contatar o Jhones:", error);
       }
     }
-    fetchFeature();
+    window.addEventListener('load', fetchFeature())
+
+    return () => {
+      window.removeEventListener('load', fetchFeature());
+    }
     
   }, [])
 
