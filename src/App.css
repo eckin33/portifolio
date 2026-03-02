@@ -811,6 +811,10 @@ footer {
   color: var(--color-1);
 }
 
+#footer-info{
+  color: var(--color-2);
+}
+
 .toggle-theme,
 .toggle-language {
   background-color: transparent;
